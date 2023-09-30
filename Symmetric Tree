@@ -1,0 +1,16 @@
+bool h(BinaryTreeNode<int>* l,BinaryTreeNode<int>* r){
+  if (l == NULL|| r == NULL) 
+  return l==r;
+   
+   if(l->data != r->data)
+   
+      return false;
+      return (h(l->left ,r->right)&& h(l->right,r->left));
+}
+bool isSymmetric(BinaryTreeNode<int>* root)
+{
+    if(root==NULL)
+    return true;
+    return h(root->left,root->right);
+   
+}
