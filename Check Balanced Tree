@@ -1,0 +1,27 @@
+class Solution{
+    public:
+    
+   
+    int ht(Node* root){
+        if(root==NULL)return 0;
+        int l=ht(root->left);
+        int r=ht(root->right);
+        return max(l,r)+1;
+        }
+    public:
+    //Function to check whether a binary tree is balanced or not.
+    bool isBalanced(Node *root)
+    {
+        if(root==NULL)
+        return true;
+        bool a=isBalanced(root->left);
+         bool b=isBalanced(root->right);
+         bool c=abs(ht(root->left)-ht(root->right))<=1;
+         if(a&&b&&c)
+         return true;
+         else return false;
+    }
+   
+    //Function to check whether a binary tree is balanced or not.
+    
+};
